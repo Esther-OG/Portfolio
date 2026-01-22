@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Razas de gatos</title>
+</head>
+<script type="text/javascript">
+    const array = {
+        Ragdoll: "https://d3544la1u8djza.cloudfront.net/APHI/Blog/2023/resources/Ragdoll.jpg",
+        Munchkin: "https://www.viva-lanzarote.com/wp-content/uploads/2024/12/Munchkin-gatos-salchicha.jpg",
+        Tricolor: "https://biomolecularblog.wordpress.com/wp-content/uploads/2016/09/gato-bobtail-japones-tricolor.jpg",
+        Siames: "https://verdecora.es/blog/wp-content/uploads/2016/12/gato-siames-caracter-historia.jpg",
+        Sphynx: "https://eu-central-1.graphassets.com/AnwjgMYRvQfWK3bRPjoq3z/resize=height:404,width:718/output=format:webp/GSYWvQuSsucYe8Va5cqx"
+    }
+    let decision = window.prompt("Escribe qué imagen quieres imprimir: " + "\nRagdoll \nMunchkin \nTricolor \nSiames \nSphynx");
+    if (array[decision]) {
+        document.write("<br><b>Has elegido el gato " + decision + " :) </b><br><br>");
+        document.write("<img src='" + array[decision] + "'>");
+    } else {
+        document.write("No has elegido ninguna de las opciones.");
+    }
+</script>
+
+<body>
+</body>
+
+</html>
