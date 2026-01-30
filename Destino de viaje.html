@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio Nodos</title>
+</head>
+
+<body>
+
+    <b>
+        <p id="parrafo1"></p>
+        <p id="parrafo2"></p>
+    </b>
+    <script>
+
+        let p1 = document.getElementById("parrafo1");
+        p1.innerText = "¿Dónde quieres viajar?";
+        p1.style.fontWeight = "bold";
+        document.body.appendChild(p1);
+        let textoBase = document.getElementById("parrafo2");
+        textoBase.innerText = "";
+        document.body.appendChild(textoBase);
+        let imagenPrincipal = document.createElement("img");
+        imagenPrincipal.src = "https://thumbs.dreamstime.com/z/viajar-por-el-mundo-con-famosos-monumentos-del-tiempo-de-viaje-composici%C3%B3n-viajes-hitos-mundiales-y-turismo-194400028.jpg";
+        document.body.appendChild(imagenPrincipal);
+        imagenPrincipal.style.position = "absolute";
+        imagenPrincipal.style.marginTop = "25px";
+        imagenPrincipal.style.maxWidth = "800px";
+        const arrayImagenes = [
+            "",
+            "https://humanidades.com/wp-content/uploads/2018/09/francia-3-800x414.jpg",
+            "https://italianismo.com.br/wp-content/uploads/2020/11/Ita%CC%81lia.jpg",
+            "https://hips.hearstapps.com/hmg-prod/images/ciudades-bonitas-alemania-bamberga-667b1e066fa89.jpg",
+            "https://www.interrail.eu/es/plan-your-trip/trip-ideas/recommended-routes/classic-routes/portugal-itinerary/_jcr_content/root/responsivegrid/masthead-image.coreimg.jpeg/1759501821749/porto-in-summer.jpeg",
+            "https://imanesdeviaje.com/wp-content/uploads/2019/06/ciudades-mas-bonitas-de-espana.jpg"
+        ]
+        const nombreOpciones = [
+            "Elige un país",
+            "Francia",
+            "Italia",
+            "Alemania",
+            "Portugal",
+            "España"
+        ]
+        let textobase = "Tu destino"
+        let selector = document.createElement("select");
+        for (let i = 0; i < 6; i++) {
+            let opcion = document.createElement("option");
+            opcion.value = arrayImagenes[i];
+            opcion.dataset.index = i;
+            opcion.textContent = nombreOpciones[i];
+            selector.appendChild(opcion);
+        }
+        document.body.appendChild(selector);
+        let imagen = document.createElement("img");
+        document.body.appendChild(imagen);
+        selector.addEventListener("change", function () {
+            imagen.setAttribute("src", this.value);
+            let indice = arrayImagenes.indexOf(this.value);
+            if (indice == 0) {
+                textoBase.innerText = ""
+                imagenPrincipal.src = "https://thumbs.dreamstime.com/z/viajar-por-el-mundo-con-famosos-monumentos-del-tiempo-de-viaje-composici%C3%B3n-viajes-hitos-mundiales-y-turismo-194400028.jpg";
+            } else {
+            imagenPrincipal.src = "";
+            textoBase.innerText = "Su destino es " + nombreOpciones[indice] + "\nEspero que lo disfrute!" }
+            
+        });
+        imagen.style.position = "absolute";
+        imagen.style.marginTop = "45px";
+        imagen.style.maxWidth = "800px";
+        selector.style.marginLeft = "10px";
+        selector.style.marginTop = "25px";
+        selector.style.position = "absolute";
+        document.body.style.backgroundColor = "#D9FAFA";
+
+    </script>
+</body>
+
+</html>
