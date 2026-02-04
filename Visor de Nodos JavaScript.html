@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Visor Nodos</title>
+</head>
+
+<body>
+    <div id="ImagenPrincipal">
+    </div>
+    <div id="MiniImagenes"></div>
+    <script>
+        let div1 = document.getElementById("ImagenPrincipal");
+        div1.style.width = "1000px";
+        div1.style.border = "1px solid black";
+        div1.style.marginRight = "auto";
+        div1.style.marginLeft = "auto";
+        div1.style.height = "700px";
+        let imagenGrande = document.createElement("img");
+        imagenGrande.src = "https://www.nevasport.com/fotos/181122/965708-Freebus-Ordino-Arcalis.jpg";
+        imagenGrande.style.width = "100%";
+        imagenGrande.style.height = "100%";
+        let div2 = document.getElementById("MiniImagenes");
+        div2.style.height = "100px";
+        div2.style.border = "1px solid black";
+        div2.style.width = "1000px";
+        div2.style.marginRight = "auto";
+        div2.style.marginLeft = "auto";
+        const arraydiv2 = [
+            "https://www.nevasport.com/fotos/181122/965708-Freebus-Ordino-Arcalis.jpg",
+            "https://media.istockphoto.com/id/460682111/es/foto/panor%C3%A1mica-de-la-puesta-de-sol-en-las-monta%C3%B1as-de-invierno.jpg?s=612x612&w=0&k=20&c=Brq6U3owSqTDoM5f1PSsfo_YAtFrRWpZ9aPfLiBoZGY=",
+            "https://estaticos-cdn.prensaiberica.es/clip/81a2a8b6-9881-4a75-a6c6-ad06cf6065c3_woman-libre-1200_default_0.jpg",
+            "https://st3.idealista.com/news/archivos/styles/news_detail/public/2017-01/sierra_gredos2.jpg",
+            "https://cdn.pixabay.com/photo/2017/08/03/14/36/winter-2576611_640.jpg",
+        ]
+        for (let i = 0; i < 5; i++) {
+            let miniImagen = document.createElement("img");
+            miniImagen.src = arraydiv2[i];
+            miniImagen.style.width = "20%";
+            miniImagen.style.height = "100%";
+            div2.appendChild(miniImagen);
+            miniImagen.addEventListener("click", function () {
+                imagenGrande.setAttribute("src", miniImagen.src);
+                imagenGrande.style.width = "100%";
+                imagenGrande.style.height = "100%";
+            })
+        }
+        document.body.appendChild(div1);
+        document.body.appendChild(div2)
+        div1.appendChild(imagenGrande);
+    </script>
+</body>
+</html>
